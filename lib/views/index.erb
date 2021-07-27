@@ -1,9 +1,39 @@
 <html>
   <head>
+  
     <title>The Gossip Project</title>
   </head>
   <body>
     <h1>Mon super site de gossip, depuis le dossier views !</h1>
-    <a href="/gossips/new/"> Texte du lien</a>
+    <a href="/gossips/new/">le texte du lien</a>
+    <style>
+        body{
+          background-color: rgba(255, 255, 128, .30);
+        }     
+      a:link, a:visited {
+        background-color: white;
+        color: black;
+        border: 2px solid green;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        justify-content: center;
+        
+        }
+
+      a:hover, a:active {
+        background-color: green;
+        color: white;
+        cursor: pointer;
+        } 
+
+    </style>
+    <% gossips.each do |gossip| %>
+      <p>
+        <%= gossip.author %><br/>
+        <%= gossip.content %>
+      </p>
+    <% end %>
   </body>
 </html>
